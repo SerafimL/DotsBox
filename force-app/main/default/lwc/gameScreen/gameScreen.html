@@ -1,21 +1,21 @@
 <template>
+    <div class="styleClass"></div>
     <lightning-card>
-        <div>
-            <c-line-v></c-line-v>
-            <c-line-v></c-line-v>
-            <c-line-v></c-line-v>
-            <c-line-v></c-line-v>
-            <c-line-v></c-line-v>
-            <c-line-v></c-line-v>
-        </div>
-        <div>
-            <c-line-h></c-line-h>
-            <c-line-h></c-line-h>
-            <c-line-h></c-line-h>
-            <c-line-h></c-line-h>
-            <c-line-h></c-line-h>
-            <c-line-h></c-line-h>
-            <c-line-h></c-line-h>
+        <div style="display: table">
+            <template for:each={lineH} for:item="hor">
+                <div key={hor}>
+                    <c-line-h
+                    name={hor}
+                    ></c-line-h>
+                </div>
+            </template>
+            <template for:each={lineV} for:item="ver">
+                <div key={ver}>
+                    <c-line-v
+                    name={ver}
+                    ></c-line-v>
+                </div>
+            </template>
         </div>
         <p slot="footer">Card Footer</p>
     </lightning-card>
